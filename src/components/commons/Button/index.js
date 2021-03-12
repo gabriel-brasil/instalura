@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import { TextStyleVariantsMap } from '../../foundation/Text';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 const ButtonGhost = css`
   color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
@@ -8,8 +9,10 @@ const ButtonGhost = css`
 `;
 
 const ButtonDefault = css`
-  color: ${({ theme, variant }) => get(theme, `colors.${variant}.contrastText`)};
-  background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
+  color: ${({ theme, variant }) =>
+    get(theme, `colors.${variant}.contrastText`)};
+  background-color: ${({ theme, variant }) =>
+    get(theme, `colors.${variant}.color`)};
 `;
 
 export const Button = styled.button`
@@ -21,7 +24,14 @@ export const Button = styled.button`
   transition: opacity ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
 
-  ${TextStyleVariantsMap.smallestException}
+  ${breakpointsMedia({
+    xs: css`
+      ${TextStyleVariantsMap.smallestException}
+    `,
+    md: css`
+      ${TextStyleVariantsMap.paragraph1}
+    `,
+  })}
 
   ${function (props) {
     if (props.ghost) {
@@ -29,8 +39,7 @@ export const Button = styled.button`
     }
     return ButtonDefault;
   }}
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     opacity: 0.5;
   }
 `;
