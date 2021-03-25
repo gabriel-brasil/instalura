@@ -1,24 +1,35 @@
+import React from 'react';
 import { Button } from '../src/components/commons/Button';
 import Footer from '../src/components/commons/Footer';
 import Menu from '../src/components/commons/Menu';
+import { Box } from '../src/components/foundation/layout/Box';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Text } from '../src/components/foundation/Text';
 
 export default function Home() {
   return (
     <>
-      <div
-        style={{
-          flex: '1',
-          display: 'flex',
-          flexWrap: 'wrap',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
+      <Box
+        flex={1}
+        display="flex"
+        flexWrap="wrap"
+        flexDirection="column"
+        justifyContent="space-between"
+        backgroundImage="url(/images/bubbles.svg)"
+        backgroundRepeat="no-repeat"
+        backgroundPosition={{
+          xs: 'center right',
+          md: 'bottom right',
         }}
       >
         <Menu />
 
-        <Grid.Container>
+        <Grid.Container
+          marginTop={{
+            xs: '32px',
+            md: '75px',
+          }}
+        >
           <Grid.Row>
             <Grid.Col
               offset={{
@@ -29,6 +40,10 @@ export default function Home() {
                 xs: 12,
                 md: 5,
               }}
+              display="flex"
+              alignItems="flex-start"
+              justifyContent="center"
+              flexDirection="column"
             >
               <Text
                 variant="title"
@@ -37,6 +52,9 @@ export default function Home() {
                 textAlign={{
                   xs: 'center',
                   md: 'left',
+                }}
+                margin={{
+                  xs: '0px',
                 }}
               >
                 Compartilhe momentos e conecte-se com amigos
@@ -49,6 +67,10 @@ export default function Home() {
                   xs: 'center',
                   md: 'left',
                 }}
+                margin={{
+                  xs: '12px 0 0 0',
+                  md: '16px 0 0 0',
+                }}
               >
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industrys standard dummy text
@@ -59,8 +81,8 @@ export default function Home() {
                 variant="primary.main"
                 display="block"
                 margin={{
-                  xs: 'auto',
-                  md: 'initial',
+                  xs: '24px auto 40px auto',
+                  md: '40px 0px 0px 0px',
                 }}
               >
                 Cadastrar
@@ -73,6 +95,7 @@ export default function Home() {
               }}
             >
               <img
+                alt="Imagem de celular ilustrando as telas do projeto."
                 style={{ display: 'block', margin: 'auto' }}
                 src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"
               />
@@ -81,7 +104,7 @@ export default function Home() {
         </Grid.Container>
 
         <Footer />
-      </div>
+      </Box>
     </>
   );
 }

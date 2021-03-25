@@ -10,12 +10,11 @@ const ButtonGhost = css`
 `;
 
 const ButtonDefault = css`
-  color: ${({ theme, variant }) =>
-    get(theme, `colors.${variant}.contrastText`)};
-  background-color: ${({ theme, variant }) =>
-    get(theme, `colors.${variant}.color`)};
+  color: ${({ theme, variant }) => get(theme, `colors.${variant}.contrastText`)};
+  background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
 `;
 
+// eslint-disable-next-line import/prefer-default-export
 export const Button = styled.button`
   border: 0;
   cursor: pointer;
@@ -35,7 +34,6 @@ export const Button = styled.button`
     opacity: 0.5;
   }
 
-  
   ${breakpointsMedia({
     xs: css`
       ${TextStyleVariantsMap.smallestException}
@@ -47,5 +45,4 @@ export const Button = styled.button`
 
   ${propToStyle('margin')}
   ${propToStyle('display')}
-
 `;
