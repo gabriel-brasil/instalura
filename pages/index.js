@@ -2,11 +2,14 @@ import React from 'react';
 import { Button } from '../src/components/commons/Button';
 import Footer from '../src/components/commons/Footer';
 import Menu from '../src/components/commons/Menu';
+import Modal from '../src/components/commons/Modal';
 import { Box } from '../src/components/foundation/layout/Box';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Text } from '../src/components/foundation/Text';
 
 export default function Home() {
+  const [isModalOpen, setModalState] = React.useState(false);
+
   return (
     <>
       <Box
@@ -22,6 +25,25 @@ export default function Home() {
           md: 'bottom right',
         }}
       >
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setModalState(false);
+          }}
+        >
+          {(propsDoModal) => (
+            <Box
+              backgroundColor="white"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...propsDoModal}
+            >
+              <div>
+                Teste1
+              </div>
+            </Box>
+          )}
+        </Modal>
+
         <Menu />
 
         <Grid.Container
@@ -72,9 +94,8 @@ export default function Home() {
                   md: '16px 0 0 0',
                 }}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy text
-                ever since the 1500s.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                Ipsum has been the industrys standard dummy text ever since the 1500s.
               </Text>
 
               <Button
@@ -83,6 +104,9 @@ export default function Home() {
                 margin={{
                   xs: '24px auto 40px auto',
                   md: '40px 0px 0px 0px',
+                }}
+                onClick={() => {
+                  setModalState(!isModalOpen);
                 }}
               >
                 Cadastrar

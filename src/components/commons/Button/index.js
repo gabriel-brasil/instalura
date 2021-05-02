@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import { TextStyleVariantsMap } from '../../foundation/Text';
@@ -14,7 +15,6 @@ const ButtonDefault = css`
   background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
 `;
 
-// eslint-disable-next-line import/prefer-default-export
 export const Button = styled.button`
   border: 0;
   cursor: pointer;
