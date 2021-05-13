@@ -6,9 +6,10 @@ import Modal from '../src/components/commons/Modal';
 import { Box } from '../src/components/foundation/layout/Box';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Text } from '../src/components/foundation/Text';
+import FormCadastro from '../src/components/patterns/FormCadastro';
 
 export default function Home() {
-  const [isModalOpen, setModalState] = React.useState(false);
+  const [isModalOpen, setModalState] = React.useState(true);
 
   return (
     <>
@@ -32,15 +33,7 @@ export default function Home() {
           }}
         >
           {(propsDoModal) => (
-            <Box
-              backgroundColor="white"
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              {...propsDoModal}
-            >
-              <div>
-                Teste1
-              </div>
-            </Box>
+            <FormCadastro propsDoModal={propsDoModal} />
           )}
         </Modal>
 
