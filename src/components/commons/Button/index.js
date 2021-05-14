@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import { Link } from '../Link';
+import Link from '../Link';
 import { TextStyleVariantsMap } from '../../foundation/Text';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { propToStyle } from '../../../theme/utils/propToStyle';
@@ -66,7 +66,7 @@ export function Button({ href, children, ...props }) {
     <ButtonWrapper
       as={tag}
       href={href}
-    // eslint-disable-next-line react/jsx-props-no-spreading
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       {children}
