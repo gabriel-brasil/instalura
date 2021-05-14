@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import theme from '../src/theme';
 import { GlobalStyle } from '../src/theme/GlobalStyle';
+import SEO from '../src/components/commons/SEO';
 
 // eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
@@ -16,6 +17,9 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
+
+      <SEO headTitle="Home" />
+
       <ThemeProvider theme={theme}>
         <GlobalStyle />
 
