@@ -3,7 +3,7 @@ import { Button } from '../src/components/commons/Button';
 import { Box } from '../src/components/foundation/layout/Box';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { WebsitePageContext } from '../src/components/wrappers/WebsitePage';
-import { Text } from '../src/components/foundation/Text';
+import Text from '../src/components/foundation/Text';
 import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc';
 
 function HomeScreen() {
