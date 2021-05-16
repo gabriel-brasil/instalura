@@ -6,7 +6,7 @@ import { Grid } from '../../foundation/layout/Grid';
 import { Box } from '../../foundation/layout/Box';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
-import { Text } from '../../foundation/Text';
+import Text from '../../foundation/Text';
 
 const formStates = {
   DEFAULT: 'DEFAULT',
